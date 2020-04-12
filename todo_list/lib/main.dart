@@ -38,53 +38,48 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      Container(
-        padding: EdgeInsets.all(2.0),
-        decoration: BoxDecoration(
-//            border: Border.all(color: Colors.black87, width: 15.0),
-            color: Colors.black54),
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-              textSection,
-            ],
-          ),
-        ),
-      )
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
+          _buildButtonColumn(),
     ]));
   }
+
+  Container _buildButtonColumn() {
+    return Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(color: Colors.black87, width: 1.0)),
+          color: Colors.black54,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'TODO LIST 123',
+                style: TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.yellow,
+                ),
+              ),
+            ),
+          ],
+        ));
+  }
 }
-
-//Widget textSection = Container(
-////  padding: const EdgeInsets.all(3),
-//  decoration: BoxDecoration(
-//    border: Border.all(color: Colors.black87, width: 1.0),
-//  ),
-//  child: Text(
-//    'TODO List123',
-////    softWrap: true,
-//    style: TextStyle(color: Colors.yellow, fontSize: 50.0),
-//  ),
-//);
-
-Widget textSection = Text(
-    'TODO List123',
-//    softWrap: true,
-    style: TextStyle(color: Colors.yellow, fontSize: 50.0),
-);
