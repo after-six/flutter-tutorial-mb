@@ -46,14 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
       _buildButtonColumn(),
       _buildButtonColumn(),
       _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
-          _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
+      _buildButtonColumn(),
     ]));
   }
 
