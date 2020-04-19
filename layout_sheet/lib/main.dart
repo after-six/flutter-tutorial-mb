@@ -31,15 +31,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: Container(
-        height: 300, width: 300,
-        transform: Matrix4.rotationZ(246),
-        decoration: BoxDecoration(color: Colors.yellow),
-        child: Text(
-          'Hi',
-          textAlign: TextAlign.center,
+      body: Center(
+        child: Container(
+          height: 200,
+          width: 200,
+          decoration: BoxDecoration(
+            color: Colors.yellow,
+            image: DecorationImage(
+              fit: BoxFit.fitWidth,
+              image: NetworkImage(
+                'https://flutter.io/images/catalog-widget-placeholder.png',
+              ),
+            ),
+          ),
         ),
-      )
+      ),
     );
 
   }
