@@ -27,14 +27,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    const iconSize = 50.0;
-
-    return Scaffold(
-      appBar: AppBar(title: Text('Stack')),
-      body: SizedBox.expand(
-        child: Card(
-          child: Text('Hello World!'),
-          color: Colors.yellowAccent,
+    return Material(
+      color: Colors.blue,
+      child: SafeArea(
+        child: SizedBox.expand(
+          child: Card(color: Colors.yellowAccent),
         ),
       ),
     );
