@@ -27,34 +27,31 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(
-        color: Colors.yellow,
-        child: Center(
-          child: IntrinsicWidth(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {},
-                  child: Text('Short'),
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  child: Text('A bit Longer'),
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  child: Text('The Longest text button'),
-                ),
-              ],
-            ),
-          ),
+    Widget main = Scaffold(
+      appBar: AppBar(title: Text('Stack')),
+    );
+
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        main,
+        Banner(
+          message: "Top Start",
+          location: BannerLocation.topStart,
         ),
-      ),
+        Banner(
+          message: "Top End",
+          location: BannerLocation.topEnd,
+        ),
+        Banner(
+          message: "Bottom Start",
+          location: BannerLocation.bottomStart,
+        ),
+        Banner(
+          message: "Bottom End",
+          location: BannerLocation.bottomEnd,
+        ),
+      ],
     );
   }
 }
