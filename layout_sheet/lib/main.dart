@@ -37,12 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 200,
           decoration: BoxDecoration(
             color: Colors.yellow,
-            image: DecorationImage(
-              fit: BoxFit.fitWidth,
-              image: NetworkImage(
-                'https://flutter.io/images/catalog-widget-placeholder.png',
-              ),
-            ),
+            border: Border.all(color: Colors.grey, width: 12.0, style: BorderStyle.solid)
           ),
         ),
       ),
