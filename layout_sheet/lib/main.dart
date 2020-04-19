@@ -34,21 +34,24 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         color: Colors.yellow,
         child: Center(
-          child: Column(
-            children: <Widget>[
-              RaisedButton(
-                onPressed: () {},
-                child: Text('Short'),
-              ),
-              RaisedButton(
-                onPressed: () {},
-                child: Text('A bit Longer'),
-              ),
-              RaisedButton(
-                onPressed: () {},
-                child: Text('The Longest text button'),
-              ),
-            ],
+          child: IntrinsicWidth(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                RaisedButton(
+                  onPressed: () {},
+                  child: Text('Short'),
+                ),
+                RaisedButton(
+                  onPressed: () {},
+                  child: Text('A bit Longer'),
+                ),
+                RaisedButton(
+                  onPressed: () {},
+                  child: Text('The Longest text button'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
