@@ -35,11 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           height: 200,
           width: 200,
-          decoration: BoxDecoration(
-            color: Colors.yellow,
-            boxShadow: const [
-              BoxShadow(blurRadius: 10),
-            ],
+          child: Image.network(
+            'https://flutter.io/images/catalog-widget-placeholder.png',
+          ),
+          foregroundDecoration: BoxDecoration(
+            backgroundBlendMode: BlendMode.exclusion,
             gradient: LinearGradient(
               colors: const [
                 Colors.red,
@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
+
         ),
       ),
     );
