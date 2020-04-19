@@ -37,7 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 200,
           decoration: BoxDecoration(
             color: Colors.yellow,
-            border: Border.all(color: Colors.grey, width: 12.0, style: BorderStyle.solid)
+//            border: Border.all(color: Colors.grey, width: 12.0, style: BorderStyle.solid),
+//            borderRadius: BorderRadius.all(Radius.circular(18)),
+            shape: BoxShape.circle,
           ),
         ),
       ),
