@@ -31,22 +31,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: LayoutBuilder(
-        builder: (context, constraints) => Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            Material(color: Colors.yellow),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Icon(Icons.star, size: iconSize),
+      body: Container(
+        child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(color: Colors.red),
             ),
-            Positioned(
-              top: constraints.maxHeight - iconSize - 20,
-              left: constraints.maxWidth - iconSize - 20,
-              child: Icon(Icons.call, size: iconSize),
+            flex: 3,
+          ),
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(color: Colors.green),
             ),
-          ],
+            flex: 2,
+          ),
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(color: Colors.blue),
+            ),
+            flex: 1,
+          ),
+        ],
         ),
       )
     );
