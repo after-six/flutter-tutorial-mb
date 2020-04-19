@@ -31,30 +31,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: Container(
-        child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(color: Colors.red),
-            ),
-            flex: 3,
-          ),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(color: Colors.green),
-            ),
-            flex: 2,
-          ),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(color: Colors.blue),
-            ),
-            flex: 1,
-          ),
-        ],
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          minWidth: double.infinity,
+          maxWidth: double.infinity,
+          minHeight: 300,
+          maxHeight: 300,
         ),
-      )
+        child: const Card(
+          child: const Text('Hello World!'),
+          color: Colors.yellow,
+        ),
+      ),
     );
 
   }
