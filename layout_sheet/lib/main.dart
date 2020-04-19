@@ -31,24 +31,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: Center(
-        child: Container(
-          height: 200,
-          width: 200,
-          child: Image.network(
-            'https://flutter.io/images/catalog-widget-placeholder.png',
-          ),
-          foregroundDecoration: BoxDecoration(
-            backgroundBlendMode: BlendMode.exclusion,
-            gradient: LinearGradient(
-              colors: const [
-                Colors.red,
-                Colors.blue,
+      body: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                FlutterLogo(size: 500),
+                Text(
+                  'This is some longest text that should be centered'
+                      'together with the logo',
+                  textAlign: TextAlign.center,
+                  textScaleFactor: 7,
+                ),
               ],
             ),
           ),
-
-        ),
+        ],
       ),
     );
 
