@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'MainAxisAlignment.start'),
+      home: MyHomePage(title: 'IntrinsicWidth'),
     );
   }
 }
@@ -33,22 +33,23 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.yellow,
-        child: Column(
-//          crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-//          textBaseline: TextBaseline.alphabetic,
-          children: <Widget>[
-            Text(
-              '진한거',
-              style: Theme.of(context).textTheme.display3,
-            ),
-            Text(
-              'small thing',
-              style: Theme.of(context).textTheme.display2,
-            ),
-            Icon(Icons.star, size: 50),
-            Icon(Icons.star, size: 200),
-          ],
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Short'),
+              ),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('A bit Longer'),
+              ),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('The Longest text button'),
+              ),
+            ],
+          ),
         ),
       ),
     );
