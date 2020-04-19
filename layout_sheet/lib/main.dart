@@ -33,9 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.yellow,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
+        child: Column(
+//          crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+//          textBaseline: TextBaseline.alphabetic,
           children: <Widget>[
             Text(
               '진한거',
@@ -45,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
               'small thing',
               style: Theme.of(context).textTheme.display2,
             ),
+            Icon(Icons.star, size: 50),
+            Icon(Icons.star, size: 200),
           ],
         ),
       ),
