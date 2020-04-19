@@ -27,23 +27,24 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    const iconSize = 50.0;
+
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: Container(
-//        color: Colors.yellow,
-        child: Stack(
+      body: LayoutBuilder(
+        builder: (context, constraints) => Stack(
           fit: StackFit.expand,
           children: <Widget>[
             Material(color: Colors.yellow),
             Positioned(
               top: 0,
               left: 0,
-              child: Icon(Icons.star, size: 50),
+              child: Icon(Icons.star, size: iconSize),
             ),
             Positioned(
-              top: 690,
-              left: 320,
-              child: Icon(Icons.call, size: 50),
+              top: constraints.maxHeight - iconSize - 20,
+              left: constraints.maxWidth - iconSize - 20,
+              child: Icon(Icons.call, size: iconSize),
             ),
           ],
         ),
