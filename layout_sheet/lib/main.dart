@@ -27,31 +27,28 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    Widget main = Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text('Stack')),
+      body: Container(
+//        color: Colors.yellow,
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            Material(color: Colors.yellow),
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Icon(Icons.star, size: 50),
+            ),
+            Positioned(
+              top: 690,
+              left: 320,
+              child: Icon(Icons.call, size: 50),
+            ),
+          ],
+        ),
+      )
     );
 
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        main,
-        Banner(
-          message: "Top Start",
-          location: BannerLocation.topStart,
-        ),
-        Banner(
-          message: "Top End",
-          location: BannerLocation.topEnd,
-        ),
-        Banner(
-          message: "Bottom Start",
-          location: BannerLocation.bottomStart,
-        ),
-        Banner(
-          message: "Bottom End",
-          location: BannerLocation.bottomEnd,
-        ),
-      ],
-    );
   }
 }
