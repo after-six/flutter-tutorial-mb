@@ -31,32 +31,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Stack')),
-      body: CustomScrollView(
-        slivers: [
-          SliverList(
-            delegate: SliverChildListDelegate(const [
-              ListTile(title: Text('First item')),
-              ListTile(title: Text('Second item')),
-              ListTile(title: Text('Third item')),
-              ListTile(title: Text('Fourth item')),
-            ]),
-          ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                FlutterLogo(size: 500),
-                Text(
-                  'This is some longest text that should be centered'
-                      'together with the logo',
-                  textAlign: TextAlign.center,
-                  textScaleFactor: 7,
-                ),
-              ],
-            ),
-          ),
-        ],
+      body: SizedBox.expand(
+        child: Card(
+          child: Text('Hello World!'),
+          color: Colors.yellowAccent,
+        ),
       ),
     );
 
