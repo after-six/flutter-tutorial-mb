@@ -33,6 +33,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text('Stack')),
       body: CustomScrollView(
         slivers: [
+          SliverList(
+            delegate: SliverChildListDelegate(const [
+              ListTile(title: Text('First item')),
+              ListTile(title: Text('Second item')),
+              ListTile(title: Text('Third item')),
+              ListTile(title: Text('Fourth item')),
+            ]),
+          ),
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
