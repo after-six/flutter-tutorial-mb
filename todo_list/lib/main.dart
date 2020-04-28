@@ -1,85 +1,93 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    List<String> aaaa = ["blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla"];
     return MaterialApp(
       title: 'Flutter Demo',
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData(
+          primarySwatch: Colors.red, secondaryHeaderColor: Colors.orange),
+      home: Scaffold(
+        appBar: AppBar(title: Text("After todo")),
+        body: Column(
+          children: <Widget>[
+            TodoTextField(),
+            Expanded(
+              child: _myListView(context)
+            )
+          ],
+        ),
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class TodoTextField extends StatelessWidget {
+  const TodoTextField({
+    Key key,
+  }) : super(key: key);
 
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView(children: [
-      Container(
-//        padding: EdgeInsets.all(2.0),
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.lightBlueAccent, width: 15.0),
-            color: Colors.black38),
-        child: Container(
-          child: Text(
-            'TODO',
-            style: TextStyle(color: Colors.black87, fontSize: 55.0),
-          ),
-        ),
-      ),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-      _buildButtonColumn(),
-    ]));
-  }
-
-  Container _buildButtonColumn() {
     return Container(
-        padding: EdgeInsets.all(12.0),
-        decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.black87, width: 1.0)),
-          color: Colors.black54,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 8),
-              child: Text(
-                'TODO LIST 123',
-                style: TextStyle(
-                  fontSize: 42,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.yellow,
-                ),
+      decoration: BoxDecoration(
+        color: Colors.amber,
+        border: Border.all(color: Colors.grey, width: 2),
+      ),
+      child: Row(
+        children: <Widget>[
+          Flexible(
+            flex: 9,
+            child: TextField(
+              maxLength: 25,
+              decoration: InputDecoration(
+                  counterStyle: TextStyle(fontSize: 0),
+                  hintText: "What do you gonna do?",
+                  border: InputBorder.none
               ),
             ),
-          ],
-        ));
+          ),
+          Flexible(
+            flex: 1,
+            child: IconButton(
+              icon: Icon(
+                Icons.send,
+                color: Colors.red,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
+}
+
+Widget _myListView(BuildContext context) {
+
+  // backing data
+  final europeanCountries = ['Albania', 'Andorra', 'Armenia', 'Austria',
+    'Azerbaijan', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria',
+    'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland',
+    'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland',
+    'Italy', 'Kazakhstan', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania',
+    'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro',
+    'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia',
+    'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
+    'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'];
+
+  return ListView.builder(
+    itemCount: europeanCountries.length,
+    itemBuilder: (context, index) {
+      return ListTile(
+        title: Text(europeanCountries[index]),
+      );
+    },
+  );
+
 }
