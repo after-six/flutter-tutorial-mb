@@ -8,7 +8,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    List<String> aaaa = ["blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla","blablalbla"];
+    List<String> aaaa = [
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla",
+      "blablalbla"
+    ];
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -18,9 +28,7 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: <Widget>[
             TodoTextField(),
-            Expanded(
-              child: _myListView(context)
-            )
+            Expanded(child: _myListView(context))
           ],
         ),
       ),
@@ -49,8 +57,7 @@ class TodoTextField extends StatelessWidget {
               decoration: InputDecoration(
                   counterStyle: TextStyle(fontSize: 0),
                   hintText: "What do you gonna do?",
-                  border: InputBorder.none
-              ),
+                  border: InputBorder.none),
             ),
           ),
           Flexible(
@@ -69,25 +76,68 @@ class TodoTextField extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-
   // backing data
-  final europeanCountries = ['Albania', 'Andorra', 'Armenia', 'Austria',
-    'Azerbaijan', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria',
-    'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland',
-    'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland',
-    'Italy', 'Kazakhstan', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania',
-    'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro',
-    'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia',
-    'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
-    'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'];
+  final europeanCountries = [
+    'Albania',
+    'Andorra',
+    'Armenia',
+    'Austria',
+    'Azerbaijan',
+    'Belarus',
+    'Belgium',
+    'Bosnia and Herzegovina',
+    'Bulgaria',
+    'Croatia',
+    'Cyprus',
+    'Czech Republic',
+    'Denmark',
+    'Estonia',
+    'Finland',
+    'France',
+    'Georgia',
+    'Germany',
+    'Greece',
+    'Hungary',
+    'Iceland',
+    'Ireland',
+    'Italy',
+    'Kazakhstan',
+    'Kosovo',
+    'Latvia',
+    'Liechtenstein',
+    'Lithuania',
+    'Luxembourg',
+    'Macedonia',
+    'Malta',
+    'Moldova',
+    'Monaco',
+    'Montenegro',
+    'Netherlands',
+    'Norway',
+    'Poland',
+    'Portugal',
+    'Romania',
+    'Russia',
+    'San Marino',
+    'Serbia',
+    'Slovakia',
+    'Slovenia',
+    'Spain',
+    'Sweden',
+    'Switzerland',
+    'Turkey',
+    'Ukraine',
+    'United Kingdom',
+    'Vatican City'
+  ];
 
-  return ListView.builder(
+  return ListView.separated(
     itemCount: europeanCountries.length,
+    separatorBuilder: (context, index) => Divider(),
     itemBuilder: (context, index) {
       return ListTile(
         title: Text(europeanCountries[index]),
       );
     },
   );
-
 }
